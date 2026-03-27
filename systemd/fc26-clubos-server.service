@@ -1,0 +1,9 @@
+[Unit]
+Description=FC26 ClubOS local web service
+
+[Service]
+ExecStart=%h/.local/bin/fc26-clubos-server
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

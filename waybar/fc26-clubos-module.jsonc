@@ -1,0 +1,9 @@
+{
+  "custom/fc26-clubos": {
+    "exec": "~/.local/bin/fc26-clubos-waybar",
+    "return-type": "json",
+    "interval": 30,
+    "on-click": "fc26-clubos",
+    "tooltip": true
+  }
+}

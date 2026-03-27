@@ -1,0 +1,6 @@
+[Unit]
+Description=FC26 ClubOS refresh
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/fc26-clubos-refresh

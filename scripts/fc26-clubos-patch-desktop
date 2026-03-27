@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+APP_HOME="${HOME}/.local/share/fc26-clubos"
+source "${APP_HOME}/.venv/bin/activate"
+export PYTHONPATH="${APP_HOME}/app:${PYTHONPATH:-}"
+
+python "${APP_HOME}/app/fc26_manager.py" patch-waybar || true
+python "${APP_HOME}/app/fc26_manager.py" patch-hypr || true

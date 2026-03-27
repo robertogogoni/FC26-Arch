@@ -1,0 +1,10 @@
+[Unit]
+Description=Run FC26 ClubOS refresh periodically
+
+[Timer]
+OnBootSec=2m
+OnUnitActiveSec=120m
+Persistent=true
+
+[Install]
+WantedBy=timers.target

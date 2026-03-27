@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# Runtime and local data
+runtime/
+imports/
+images/
+logs/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+status.json
+config.local.json
+
+# OS and editors
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Archives and releases built locally
+releases/*.tar.gz

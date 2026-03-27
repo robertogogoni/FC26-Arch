@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+STATUS="${HOME}/.local/share/fc26-clubos/runtime/status.json"
+if [[ -f "${STATUS}" ]]; then
+  players=$(jq -r '.players_total // .players // 0' "${STATUS}" 2>/dev/null || echo 0)
+  queue=$(jq -r '.queue_total // 0' "${STATUS}" 2>/dev/null || echo 0)
+  text="FC26 ${players}"
+  class="ok"
+  if [[ "${queue}" != "0" ]]; then class="warn"; text="FC26 ${players} Q:${queue}"; fi
+  jq -n --arg text "${text}" --arg class "${class}" --arg tooltip "Players: ${players}
+Queue: ${queue}" '{text:$text,class:$class,tooltip:$tooltip}'
+else
+  jq -n '{text:"FC26 ?",class:"idle",tooltip:"No status yet"}'
+fi

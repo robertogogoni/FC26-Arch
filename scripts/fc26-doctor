@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+APP_HOME="${HOME}/.local/share/fc26-clubos"
+if [ -f "${APP_HOME}/.venv/bin/activate" ]; then
+  source "${APP_HOME}/.venv/bin/activate"
+fi
+export PYTHONPATH="${APP_HOME}/app:${PYTHONPATH:-}"
+python "${APP_HOME}/app/fc26_doctor.py" "$@"
